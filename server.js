@@ -17,41 +17,46 @@ var articalOne ={
     </p>     
     `
 };
-
-var htmltemplate = `'
-<html>
-<head>
-    <title>
-        ${title}
-    </title>
-    <meta name="viewport" content ="width=device-width , initial-scale=1"/>
-    <link href="/ui/style.css" rel="stylesheet" />
-</head>
-<body>
-    <div class = "container">
-        <a href="/" >Home</a>
-        <hr/>
-        <div>
-            ${date}
+function createTemplate (data){
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
+    var htmlTemplate = `'
+    <html>
+    <head>
+        <title>
+            ${title}
+        </title>
+        <meta name="viewport" content ="width=device-width , initial-scale=1"/>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class = "container">
+            <a href="/" >Home</a>
+            <hr/>
+            <div>
+                ${date}
+            </div>
+            <h1>Personal</h1>
+            <p>
+                This is my personal information about me.
+            </p>
+            <h1>Professional</h1>
+            <p>
+                This is my list of experiences :
+            </p>
+            <ol>
+                <li>Company A: Worked as someone seriously.</li>
+                <li>Company B: Worked without seriousnous.</li>
+            </ol>
+                ${content}
         </div>
-        <h1>Personal</h1>
-        <p>
-            This is my personal information about me.
-        </p>
-        <h1>Professional</h1>
-        <p>
-            This is my list of experiences :
-        </p>
-        <ol>
-            <li>Company A: Worked as someone seriously.</li>
-            <li>Company B: Worked without seriousnous.</li>
-        </ol>
-            ${content}
-    </div>
-</body>
-</html>
-`;
-
+    </body>
+    </html>
+    `;
+    return htmlTemplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -69,7 +74,7 @@ app.get('/artical-three',function(req, res){
 });
 
 app.get('/artical-ones',function(req, res){
-    res.sendFile(path.join(__dirname , 'ui', 'artical-one.html'));
+    res.send(createTemplate(articalOne));
 });
 
 
