@@ -9,19 +9,19 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/ui/artical-one', function (req, res){
+app.get('/artical-one', function (req, res){
     res.send("This is artical-one");
 });
 
-app.get('/ui/artical-two',function(req, res){
+app.get('/artical-two',function(req, res){
     res.send("This is artical-two");
 });
 
-app.get('/ui/artical-three',function(req, res){
+app.get('/artical-three',function(req, res){
     res.send("This is artical-three");
 });
 
-app.get('/ui/artical-ones',function(req, res){
+app.get('/artical-ones',function(req, res){
     res.sendFile(path.join(__dirname , 'ui', 'artical-one.html'));
 });
 
