@@ -97,9 +97,9 @@ app.get('/artical-three',function(req, res){
     res.send("This is artical-three");
 });
 
-app.get('/:articalName',function(req, res){
-    var articalName =req.params.articalName;
-    res.send(createTemplate(articals[articalName]));
+app.get('/:articleName',function(req, res){
+    var articleName =req.params.articleName;
+    res.send(createTemplate(articals[articleName]));
 });
 
 
