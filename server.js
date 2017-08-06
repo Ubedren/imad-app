@@ -10,8 +10,21 @@ app.get('/', function (req, res) {
 });
 
 app.get('/ui/artical-one',function(req, res){
+    res.send("This is artical-one");
+});
+
+app.get('/ui/artical-two',function(req, res){
+    res.send("This is artical-two");
+});
+
+app.get('/ui/artical-three',function(req, res){
+    res.send("This is artical-three");
+});
+
+app.get('/ui/artical-ones',function(req, res){
     res.sendFile(path.join(__dirname , 'ui', 'artical-one.html'));
 });
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
