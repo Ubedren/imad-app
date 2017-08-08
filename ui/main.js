@@ -1,13 +1,6 @@
-console.log('Loaded!');
-var pic = document.getElementById('pic');
-var marginLeft = 0;
-function moveLeft(){
-    if(marginLeft>500)
-        marginLeft = 0;
-    marginLeft = marginLeft + 5;
-    pic.style.marginLeft = marginLeft + 'px';
-}
-pic.onclick = function(){
-    var interval = setInterval(moveLeft,50);
-    
+var button = document.getElementById('counter');
+button.onclick = function () {
+    counter = counter +1;
+    var span = document.getElementById('count');
+    span.innerHTML = counter.toString();
 };
