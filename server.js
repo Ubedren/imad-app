@@ -90,6 +90,12 @@ app.get('/artical-one', function (req, res){
     res.send("This is artical-one");
 });
 
+var counter;
+app.get('/counter',function (req, res){
+    counter=counter+1;
+    res.send(counter.toString())
+});
+
 app.get('/artical-two',function(req, res){
     res.send("This is artical-two");
 });
