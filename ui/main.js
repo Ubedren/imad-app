@@ -8,7 +8,7 @@ button.onclick = function () {
     request.onreadystatechange = function(){
         if(request.readyState == XMLHttpRequest.DONE) {
             //Take some action
-            if(request.status ==200 ||request.status==304){
+            if(request.status ==200 ){
                 var names=request.responseText;
                 names=JSON.parse(names);
                 var counter =request.responseText;
@@ -24,16 +24,26 @@ button.onclick = function () {
 };
 var submit = document.getElementById("submit");
 submit.onclick=function(){
-  var names=reques.params.name;
-  var list='';
-  for(var i = 0;i<names.length;i++){
-      list = '<li>' + names[i]+ '</li>';
-  }
-  var ul=document.getElementById("namelist");
-  ul.innerHTML=list;
-
-var nameInput = document.getElementById("name");
-var name = nameInput.value;
-request.open('GET','http://ubendren96.imad.hasura-app.io/counter',name,true);
-request.send(null);
+    
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function(){
+        if(request.readyState == XMLHttpRequest.DONE){
+            //take action
+            if(request.readystatus == 200){
+                var names=reques.params.name;
+                var list='';
+                for(var i = 0;i<names.length;i++){
+                    list = '<li>' + names[i]+ '</li>';
+                }
+                var ul=document.getElementById("namelist");
+                ul.innerHTML=list;
+            }
+        }
+    };
+    var nameInput = document.getElementById("name");
+    var name = nameInput.value;
+    request.open('GET','http://ubendren96.imad.hasura-app.io/counter',name,true);
+    request.send(null);            
+    
 };
