@@ -19,7 +19,7 @@ button.onclick = function () {
     };
     
     //Make the request
-    request.open('GET','http://ubendren96.imad.hasura-app.io/counter',name,true);
+    request.open('GET','http://ubendren96.imad.hasura-app.io/counter',true);
     request.send(null);
 };
 var submit = document.getElementById("submit");
@@ -30,7 +30,7 @@ submit.onclick=function(){
     request.onreadystatechange = function(){
         if(request.readyState == XMLHttpRequest.DONE){
             //take action
-            if(request.readystatus == 200||readystatus == 304){
+            if(request.status == 200||request.status == 304){
                 var names=request.responseText;
                 names=JSON.parse(names);
                 var list='';
