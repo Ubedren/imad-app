@@ -22,8 +22,6 @@ button.onclick = function () {
     request.open('GET','http://ubendren96.imad.hasura-app.io/counter',name,true);
     request.send(null);
 };
-var nameInput = document.getElementById("name");
-var name = nameInput.value;
 var submit = document.getElementById("submit");
 submit.onclick=function(){
   var names=['name1','name2','name3'];
@@ -33,4 +31,9 @@ submit.onclick=function(){
   }
   var ul=document.getElementById("namelist");
   ul.innerHTML=list;
+
+var nameInput = document.getElementById("name");
+var name = nameInput.value;
+request.open('GET','http://ubendren96.imad.hasura-app.io/counter',name,true);
+request.send(null);
 };
