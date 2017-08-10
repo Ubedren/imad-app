@@ -31,7 +31,8 @@ submit.onclick=function(){
         if(request.readyState == XMLHttpRequest.DONE){
             //take action
             if(request.readystatus == 200||readystatus == 304){
-                var names=request.params.name;
+                var names=request.responseText;
+                names=JSON.parse(names);
                 var list='';
                 for(var i = 0;i<names.length;i++){
                     list = '<li>' + names[i]+ '</li>';
