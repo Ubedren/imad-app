@@ -20,7 +20,7 @@ button.onclick = function () {
     request.open('GET','http://ubendren96.imad.hasura-app.io/counter',true);
     request.send(null);
 };
-var submit = document.getElementById("submit");
+var submit = document.getElementById("submit_btn");
 submit.onclick=function(){
     
     var request = new XMLHttpRequest();
@@ -44,5 +44,4 @@ submit.onclick=function(){
     var name = nameInput.value;
     request.open('GET','http://ubendren96.imad.hasura-app.io/counter',name,true);
     request.send(null);            
-    
 };
