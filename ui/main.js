@@ -20,9 +20,9 @@ button.onclick = function () {
     request.open('GET','http://ubendren96.imad.hasura-app.io/counter',true);
     request.send(null);
 };
-var nameInput = document.getElementById("name");
+var nameInput = document.getElementById("inputname");
 var name = nameInput.value;
-var submit = document.getElementById("submit_btn");
+var submit = document.getElementById("submit");
 submit.onclick=function(){
   var names=['name1','name2','name3'];
   var list='';
