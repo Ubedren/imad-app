@@ -9,6 +9,8 @@ button.onclick = function () {
         if(request.readyState == XMLHttpRequest.DONE) {
             //Take some action
             if(request.status ==200){
+                var names=request.responseText;
+                names=JSON.parse(names);
                 var counter =request.responseText;
                 var span = document.getElementById('count');
                 span.innerHTML = counter.toString();
@@ -17,7 +19,7 @@ button.onclick = function () {
     };
     
     //Make the request
-    request.open('GET','http://ubendren96.imad.hasura-app.io/counter',true);
+    request.open('GET','http://ubendren96.imad.hasura-app.io/counter',name,true);
     request.send(null);
 };
 var nameInput = document.getElementById("inputname");
