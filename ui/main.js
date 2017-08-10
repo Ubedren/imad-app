@@ -42,6 +42,6 @@ submit.onclick=function(){
     };
     var nameInput = document.getElementById("name");
     var name = nameInput.value;
-    request.open('GET','http://ubendren96.imad.hasura-app.io/counter',name,true);
+    request.open('GET','http://ubendren96.imad.hasura-app.io/counter '+name,true);
     request.send(null);            
 };
