@@ -118,7 +118,7 @@ app.get('/', function (req, res) {
 });
 
 var names=[];
-app.get('/submit-name', function (req, res) {
+app.get('/submit', function (req, res) {
   var name = req.query.name;
   names.pust(name);
   res.send(JSON.stringify(names));
