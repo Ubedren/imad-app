@@ -117,6 +117,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/favicon.ico', function (req, res) {
+  res.send('icon');
+});
+
+
 var names=[];
 app.get('/submit-name', function (req, res) {
   var name = req.query.name;
