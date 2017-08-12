@@ -26,10 +26,19 @@ var name= nameInput.value;
 var list='';
 var submit = document.getElementById('submit_btn');
 submit.onclick=function(){
-    var names = nameInput;
-    for(var i =0;i< names.length;i++){
-        list += '<li>' + names[i] + '</li>';
-    }
-    var ul = document.getElementById('namelist');
-    ul.innerHTML=list;
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function(){
+        if(request.readyState == XMLHttpRequest.DONE) {
+            if(request.status ==200 ){
+                var names = request.responseText;
+                for(var i =0;i< names.length;i++){
+                    list += '<li>' + names[i] + '</li>';
+                }
+            var ul = document.getElementById('namelist');
+            ul.innerHTML=list;
+            }
+        }
+    };
+    
 };
