@@ -123,9 +123,9 @@ app.get('/favicon.ico', function (req, res) {
 
 
 var names=[];
-app.get('/submit-name', function (req, res) {
-  var name = req.query.name;
-  names.pust(name);
+app.get('/submit-name/:name', function (req, res) {
+  var name = req.params.name;
+  names.push(name);
   res.send(JSON.stringify(names));
 });
 
