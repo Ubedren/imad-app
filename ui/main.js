@@ -68,7 +68,7 @@ submit.onclick=function(){
     };
     
     //Make the request
-    request.open('GET','http://ubendren96.imad.hasura-app.io/counter',true);
+    request.open('GET','http://ubendren96.imad.hasura-app.io/submit-name',true);
     request.send(null);
     
     
