@@ -104,6 +104,13 @@ app.get('/artical-three',function(req, res){
     res.send("This is artical-three");
 });
 
+var names=[];
+app.get('/submit-name', function (req, res) {
+  var name = req.query.name;
+  names.push(name);
+  res.send(JSON.stringify(names));
+});
+
 app.get('/:articleName',function(req, res){
     var articleName =req.params.articleName;
     res.send(createTemplate(articals[articleName]));
@@ -120,15 +127,6 @@ app.get('/', function (req, res) {
 app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
 });
-
-
-var names=[];
-app.get('/submit-name', function (req, res) {
-  var name = req.query.name;
-  names.push(name);
-  res.send(JSON.stringify(names));
-});
-
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
