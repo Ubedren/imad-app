@@ -155,9 +155,7 @@ app.post('/login',function(req,res){
               }else{
                   res.status(403).send('username or password is invalid');
               }
-              
           }
-          res.send('User successfully created '+username);
       }
    });
 });
