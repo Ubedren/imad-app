@@ -2,6 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+var crypto = require('crypto');
 
 var app = express();
 app.use(morgan('combined'));
@@ -112,10 +113,20 @@ app.get('/artical-one', function (req, res){
     res.send("This is artical-one");
 });
 
+function hash(input,salt){
+    var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
+    return hashed.toString('hex');
+}
+
+app.get('/:input',function(req, res){
+   var hashedString = hash(req.params.input,'this is any random string'); 
+   res.send(hashedString);
+});
+
 var counter=0;
 app.get('/counter',function (req, res){
     counter=counter+1;
-    res.send(counter.toString())
+    res.send(counter.toString());
 });
 
 app.get('/artical-two',function(req, res){
