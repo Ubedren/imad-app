@@ -137,6 +137,7 @@ app.post('/create-user',function(req,res){
 });
 
 app.post('/login',function(req,res){
+
    var username = req.body.username;
    var password = req.body.password;
    
@@ -148,8 +149,8 @@ app.post('/login',function(req,res){
           if(result.rows.length === 0){
               res.status(403).send('username or password is invalid');
           }else{
-              var dbstring= result.row[0].password;
-              var salt = dbstring.split('$')[2];
+              var dbString= result.row[0].password;
+              var salt = dbString.split('$')[2];
               var hashedpassword = hash(password,salt);
               if(hashedpassword===dbstring){
                   res.send('User loged successfully!');
