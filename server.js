@@ -159,6 +159,7 @@ app.post('/login',function(req,res){
               var hashedpassword = hash(password,salt);
               
               if(hashedpassword === dbString){
+                  req.session.auth={userId: result.rows[0].id};
                   res.send('User loged successfully!');
               }else{
                   res.status(403).send('username or password is invalid');
@@ -169,7 +170,7 @@ app.post('/login',function(req,res){
 });
 
 app.get('/check-login',function (req,res){
-   if(req.session&&req.session.auth&&req.session.auth.userid){
+   if(req.session&&req.session.auth&&req.session.auth.userId){
        res.send('You are logged in');
    } else{
        res.send('You are not logged in');
