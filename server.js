@@ -136,7 +136,7 @@ app.post('/create-user',function(req,res){
    });
 });
 
-/*
+//*
 app.post('/login',function(req,res){
 
    var username = req.body.username;
@@ -162,7 +162,7 @@ app.post('/login',function(req,res){
       }
    });
 });
-*/
+/*
 
 app.post('/login', function (req, res) {
    var username = req.body.username;
@@ -196,7 +196,7 @@ app.post('/login', function (req, res) {
       }
    });
 });
-
+*/
 app.get('/hash/:input',function(req, res){
    var hashedString = hash(req.params.input,'this is any random string'); 
    res.send(hashedString);
