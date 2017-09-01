@@ -141,6 +141,10 @@ app.post('/create-user',function(req,res){
    });
 });
 
+app.get('/signup',function(req,res){
+   res.sendfile('') 
+});
+
 //*
 app.post('/login',function(req,res){
 
