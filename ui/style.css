@@ -32,3 +32,59 @@ body {
     color:grey;
     padding:10px;
 }
+
+.align-left {
+    float: left;
+}
+
+.logi {
+    align-items: center;
+    /* float: left; */
+    padding: 12px;
+    /* -webkit-appearance: button; */
+    /* -webkit-background-origin: padding-box; */
+    /* -webkit-padding-start: 10px; */
+    /* -webkit-background-clip: content-box; */
+    /* align-content: flex-start; */
+}
+
+input#username {
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+}
+
+input#password {
+    padding: 5px;
+    margin: 5px;
+}
+
+input#submit_btn {
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+
+input#signup {
+    padding: 5px;
+    float: inherit;
+    margin: 5px;
+}
+
+.logc {
+    align-items: right;
+    margin-right: 60px;
+    -webkit-appearance: inherit;
+    -webkit-app-region: drag;
+    -webkit-box-align: center;
+    padding: 20px;
+}
+
+form.logic {
+    float: initial;
+    margin: 5px;
+}
+
+.artic {
+    padding: 20px;
+}
