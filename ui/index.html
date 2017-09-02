@@ -1,48 +1,31 @@
-<!DOCTYPE html>
-<!-- saved from url=(0037)http://ubendren96.imad.hasura-app.io/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Blog</title>
-        <link href="ui/style.css" rel="stylesheet">
+<!doctype html>
+<html>
+    <head>
+        <link href="/ui/style.css" rel="stylesheet" />
     </head>
     <body>
         <div class="container">
-            <div class="align-left">
-                <img id="pic" src="https://pbs.twimg.com/profile_images/894915056747462657/EMKYh56C_400x400.jpg" class="img-medium">
+            <div class="center">
+                <img id='madi' src="https://pbs.twimg.com/profile_images/794285789240623104/Cyio02cd_400x400.jpg" class="img-medium"/>
             </div>
-            <div align="center">
-                <hr><br>
-                <h3>Personal</h3>
-                <div>
-                    Hi my name is Ubendren.
-                </div>
-                <hr>
-                <h3>Professional</h3>
-                <div>
-                    I pursuing graduate in my Information Technology.
-                </div>
-                <hr>
+            <h3>About Me</h3>
+            <div>
+                Hi. My name is Tanmai Gopal<br/>
+                I work at Hasura
             </div>
-            <div class="logi">
-                <div class="logc" align="left">
-                    <h3>Login</h3>
-                    <form action="http://ubendren96.imad.hasura-app.io/login" method="POST" class="logic">
-                        <input type="text" id="username" placeholder="username"><br>
-                        <input type="password" id="password" placeholder="password"><br>
-                        <input type="submit" id="submit_btn">
-                    </form>
-                    <label>Create new account</label>
-                    <input type="button" id="signup" value="Signup">
-                </div>
-                <div class="artic">
-                    <label>Articles</label>
-                    <ul>
-                        <li><a href="http://ubendren96.imad.hasura-app.io/article-one">Artical One</a></li>
-                        <li><a href="http://ubendren96.imad.hasura-app.io/article-two">Artical Two</a></li>
-                    </ul>
-                </div>
+            <hr/>
+            <div id="login_area">
+                <center>Loading login status...</center>
+            </div>
+            <hr/>
+            <h3>My Articles</h3>
+            <div id="articles">
+                <center>Loading articles...</center>
             </div>
             <div class="footer">
             </div>
         </div>
-        <script type="text/javascript" src="/ui/main.js"></script>
-</body></html>
+        <script type="text/javascript" src="/ui/main.js">
+        </script>
+    </body>
+</html>
