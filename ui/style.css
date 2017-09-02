@@ -71,7 +71,7 @@ input#signup {
     margin: 5px;
 }
 
-.logc {
+form.logc {
     align-items: right;
     margin-right: 60px;
     -webkit-appearance: inherit;
