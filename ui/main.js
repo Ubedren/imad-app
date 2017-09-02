@@ -30,3 +30,5 @@ submit.onclick=function(){
     request.send(JSON.stringify({username: username,password: password}));
     
 };
+
+var createuser = document.getElementById('signup');
