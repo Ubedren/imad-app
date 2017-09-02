@@ -1,5 +1,5 @@
 //submit username/password
-var submit = document.getElementById('submit_btn');
+/*var submit = document.getElementById('submit_btn');
 submit.onclick=function(){
     
     var request = new XMLHttpRequest();
@@ -29,6 +29,6 @@ submit.onclick=function(){
     request.setRequestHeader('Content-Type','application/json');
     request.send(JSON.stringify({username: username,password: password}));
     
-};
+};*/
 
 var createuser = document.getElementById('signup');
