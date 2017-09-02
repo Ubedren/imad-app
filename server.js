@@ -71,7 +71,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
  
- 
+ var pool = new Pool(config);
+
 function hash (input, salt) {
     // How do we create a hash?
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
@@ -154,7 +155,6 @@ app.get('/logout', function (req, res) {
    res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
  
-var pool = new Pool(config);
  
 app.get('/get-articles', function (req, res) {
    // make a select request
