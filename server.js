@@ -102,10 +102,11 @@ app.post('/create-user', function (req, res) {
    var salt = crypto.randomBytes(128).toString('hex');
    var dbString = hash(password, salt);
    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
+       if (err) {
+          res.status(500).send(JSON.stringify({"error":err.toString()}));
       } else {
-          res.send('User successfully created: ' + username);
+          var message = 'User successfully created: ' + username;
+          res.send(JSON.stringify({"message":message}));
       }
    });
 });
@@ -133,10 +134,10 @@ app.post('/login', function (req, res) {
                 // internally, on the server side, it maps the session id to an object
                 // { auth: {userId }}
                 
-                res.send('credentials correct!');
+                res.send(JSON.stringify({"message":"You have logged in successfully"}));
                 
               } else {
-                res.status(403).send('username/password is invalid');
+                res.status(403).send(JSON.stringify({"error":"Username/Password is incorrect"}));
               }
           }
       }
@@ -148,13 +149,13 @@ app.get('/check-login', function (req, res) {
        // Load the user object
        pool.query('SELECT * FROM "user" WHERE id = $1', [req.session.auth.userId], function (err, result) {
            if (err) {
-              res.status(500).send(err.toString());
+              res.status(500).send(JSON.stringify({"error":err.toString()}));
            } else {
-              res.send(result.rows[0].username);    
+              res.send(JSON.stringify({"message":result.rows[0].username}));    
            }
        });
    } else {
-       res.status(400).send('You are not logged in');
+       res.status(400).send(JSON.stringify({"error":"You are not logged in"}));
    }
 });
 
@@ -172,6 +173,7 @@ app.get('/get-articles', function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
+          res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify(result.rows));
       }
    });
