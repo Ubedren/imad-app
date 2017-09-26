@@ -181,14 +181,14 @@ app.get('/get-articles', function (req, res) {
 
 app.post('/addComplaint', function (req, res) {
     
-    var comp_id = req.body.compid;
+    //var comp_id = req.body.compid;
     var heading = req.body.heading;
     var content= req.body.content;
     var date = req.body.date;
     var img= req.body.img;
     var location= req.body.location;
     
-    pool.query("INSERT INTO COMPLAINT (comp_id,heading,content,date,img,location) values($1,$2,$3,$4,$5,$6)", 
+    pool.query("INSERT INTO COMPLAINT (heading,content,date,img,location) values($1,$2,$3,$4,$5,$6)", 
     [comp_id,heading,content,date,img,location],
     function (err, result) {
         if (err) {
