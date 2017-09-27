@@ -198,11 +198,11 @@ app.post('/addComplaint', function (req, res) {
     var heading = req.body.heading;
     var content= req.body.content;
     var date = req.body.date;
-    var img= req.body.img;
+    //var img= req.body.img;
     var location= req.body.location;
     
-    pool.query("INSERT INTO COMPLAINT (heading,content,date,img,location) values($1,$2,$3,$4,$5)", 
-    [heading,content,date,img,location],
+    pool.query("INSERT INTO COMPL (heading,content,date,location) values($1,$2,$3,$4)", 
+    [heading,content,date,location],
     function (err, result) {
         if (err) {
             res.status(500).send(err.toString());
