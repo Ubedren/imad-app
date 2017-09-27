@@ -179,6 +179,19 @@ app.get('/get-articles', function (req, res) {
    });
 });
 
+app.get('/get-complaints', function (req, res) {
+   pool.query('SELECT * FROM compl ORDER BY date DESC', function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.setHeader('Content-Type', 'application/json');
+          res.send(JSON.stringify(result.rows));
+      }
+   });
+});
+
+
+
 app.post('/addComplaint', function (req, res) {
     
     //var comp_id = req.body.compid;
